@@ -23,12 +23,11 @@
 	
 	// Display & Format Data //
 	function displayData(data) {
-		// clear output
-		$("#output").html("");
+		$("#output").html(""); // clear output
 	
 		var row = {};
-		$.each(data, function(index, row) {
-			var displayText = JSON.stringify(row);
+		$.each(data, function(key, row) {
+			var displayText = JSON.stringify(key) + ": " + JSON.stringify(row);
 			
 			var displayRowHtml = $("<span>");
 			displayRowHtml.text(displayText);
@@ -53,7 +52,7 @@
 			}
 		})
 		.done(function() {
-			$("#messages").html("<span><i>Completed POST request! (see response below)</i></span>");
+			$("#messages").html("<span><i>Finished POST request! (see response below)</i></span>");
 		})
 		.fail(function(jqXHR, textStatus, errorThrown) {
 			$("#messages").html("<span style=\"color: red;\"><b>ERROR:</b> An error has occurred while processing the request.<br/><br/>(" + textStatus + ") " + jqXHR.status + " " +  jqXHR.responseText + " " + errorThrown + "</br><br/><i>(Please follow instructions in 'HOW_TO.txt' or debug via JavaScript Messages Console)</i></span>");
