@@ -66,14 +66,13 @@
 <div id="messages" style="margin-bottom:20px;"></div>
 
 <!-- Data is displayed inside of the "#output" HTML element -->
-<div id="output"></div>
-
-<br/>
+<div id="output"></div><br/>
 
 <b>Description (iSaw)</b><br/>
 <input type="text" id="description" name="description" maxlength=1000 />
 
 <input type="button" id="submit" name="submit" onclick="postData();" value="Create Tip" />
+
 
 <!-- allows submit when enter key is pressed -->
 <script type="text/javascript">
@@ -87,6 +86,7 @@ $("input[type='text']").keypress(function(e) {
 	}
 });
 </script>
+
 
 </body>
 </html>
