@@ -1,4 +1,4 @@
-** Youth Ideas Hack (Simplified JavaScript Example) **
+##Youth Ideas Hack (Simplified JavaScript Example)##
 
 A lightweight simplified JavaScript example which utilizes the Chicago Police Department ClearPath API (may require a local HTTP Server such as NodeJS using "node-http-server" module).
 
