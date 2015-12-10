@@ -23,6 +23,9 @@
 	
 	// Display & Format Data //
 	function displayData(data) {
+		// clear output
+		$("#output").html("");
+	
 		var row = {};
 		$.each(data, function(index, row) {
 			var displayText = JSON.stringify(row);
@@ -71,7 +74,20 @@
 <b>Description (iSaw)</b><br/>
 <input type="text" id="description" name="description" maxlength=1000 />
 
-<input type="button" id="createTip" name="createTip" onclick="postData();" value="Create Tip" />
+<input type="button" id="submit" name="submit" onclick="postData();" value="Create Tip" />
+
+<!-- allows submit when enter key is pressed -->
+<script type="text/javascript">
+$("input[type='text']").keypress(function(e) {
+	if (e.which == 13 && !e.shiftKey) {
+		e.preventDefault();
+		jQuery(this).blur();
+		jQuery('#submit').focus().click();
+		
+		return false;
+	}
+});
+</script>
 
 </body>
 </html>
